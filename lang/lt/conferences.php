@@ -9,7 +9,10 @@ return [
     'view' => 'Peržiūrėti',
     'add_new' => 'Pridėti naują konferenciją',
     'no_conferences' => 'Konferencijų nerasta',
-    
+
+    'my_conferences' => 'Mano konferencijos',
+    'view_all' => 'Peržiūrėti visas',
+
     // Form fields
     'fields' => [
         'title' => 'Pavadinimas',
@@ -17,11 +20,13 @@ return [
         'date' => 'Data',
         'address' => 'Adresas',
         'participants' => 'Dalyvių skaičius',
+        'organizer' => 'Organizatorius',
     ],
-    
+
     // Buttons
     'buttons' => [
         'save' => 'Išsaugoti',
+        'create' => 'Sukurti',
         'update' => 'Atnaujinti',
         'cancel' => 'Atšaukti',
         'back' => 'Grįžti',

@@ -2,9 +2,9 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-use Illuminate\Database\Seeder;
 use App\Models\Conference;
+use App\Models\User;
+use Illuminate\Database\Seeder;
 
 class ConferenceSeeder extends Seeder
 {
@@ -13,20 +13,35 @@ class ConferenceSeeder extends Seeder
      */
     public function run(): void
     {
-        Conference::create([
-            'title' => 'Tech Innovators Summit',
-            'description' => 'A conference for the latest in tech innovation.',
-            'date' => '2024-09-15',
-            'address' => '123 Tech Lane, Silicon Valley, CA',
-            'participants' => 250,
-        ]);
+        $admin = User::where('email', 'admin@example.com')->first();
 
-        Conference::create([
-            'title' => 'Healthcare Advances Conference',
-            'description' => 'Exploring new advancements in healthcare technology.',
-            'date' => '2024-10-20',
-            'address' => '456 Health St, Boston, MA',
-            'participants' => 300,
-        ]);
+        if ($admin) {
+            Conference::create([
+                'user_id' => $admin->id,
+                'title' => 'Laravel Development Conference 2025',
+                'description' => 'Join us for an in-depth discussion on modern Laravel development practices, including testing, performance optimization, and real-world applications.',
+                'date' => '2025-12-15',
+                'address' => 'Vilnius Convention Center, Vilnius',
+                'participants' => 250,
+            ]);
+
+            Conference::create([
+                'user_id' => $admin->id,
+                'title' => 'Web Security Summit',
+                'description' => 'A comprehensive summit covering the latest web security threats, best practices for securing applications, and emerging trends in cybersecurity.',
+                'date' => '2025-12-20',
+                'address' => 'Kaunas Technology Park, Kaunas',
+                'participants' => 180,
+            ]);
+
+            Conference::create([
+                'user_id' => $admin->id,
+                'title' => 'PHP Best Practices Workshop',
+                'description' => 'Intensive workshop on PHP best practices, code quality, design patterns, and production-ready application development.',
+                'date' => '2025-12-28',
+                'address' => 'Tech Hub Vilnius, Vilnius',
+                'participants' => 100,
+            ]);
+        }
     }
 }

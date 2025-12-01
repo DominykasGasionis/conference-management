@@ -10,6 +10,9 @@ return [
     'add_new' => 'Add New Conference',
     'no_conferences' => 'No conferences found',
     
+    'my_conferences' => 'My Conferences',
+    'view_all' => 'View All',
+
     // Form fields
     'fields' => [
         'title' => 'Title',
@@ -17,11 +20,13 @@ return [
         'date' => 'Date',
         'address' => 'Address',
         'participants' => 'Number of Participants',
+        'organizer' => 'Organizer',
     ],
-    
+
     // Buttons
     'buttons' => [
         'save' => 'Save',
+        'create' => 'Create',
         'update' => 'Update',
         'cancel' => 'Cancel',
         'back' => 'Back',

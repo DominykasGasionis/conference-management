@@ -10,6 +10,7 @@ class Conference extends Model
     use HasFactory;
 
     protected $fillable = [
+        'user_id',
         'title',
         'description',
         'date',
@@ -17,6 +18,16 @@ class Conference extends Model
         'participants',
     ];
 
+    protected $casts = [
+        'date' => 'date',
+    ];
 
-
+    /**
+     * Get the user that created this conference
+     */
+    public function user()
+    {
+        return $this->belongsTo(User::class);
+    }
 }
+

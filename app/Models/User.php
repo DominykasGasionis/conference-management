@@ -45,4 +45,12 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    /**
+     * Get all conferences created by this user
+     */
+    public function conferences()
+    {
+        return $this->hasMany(Conference::class);
+    }
 }

@@ -2,10 +2,21 @@
 
 namespace App\Providers;
 
+use App\Models\Conference;
+use App\Policies\ConferencePolicy;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {
+    /**
+     * The policy mappings for the application.
+     *
+     * @var array
+     */
+    protected $policies = [
+        Conference::class => ConferencePolicy::class,
+    ];
+
     /**
      * Register any application services.
      */
