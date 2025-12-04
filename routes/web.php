@@ -15,7 +15,6 @@ Route::get('/', function () {
     return view('guest', compact('conferences'));
 })->name('home');
 
-// Authentication routes
 Route::middleware('guest')->group(function () {
     Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
     Route::post('/login', [AuthController::class, 'login'])->name('login.post');
@@ -27,12 +26,10 @@ Route::post('/logout', [AuthController::class, 'logout'])
     ->middleware('auth')
     ->name('logout');
 
-// Dashboard
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware('auth')->name('dashboard');
 
-// Conference routes (authenticated users only)
 Route::middleware('auth')->group(function () {
     Route::resource('conferences', ConferenceController::class);
 });

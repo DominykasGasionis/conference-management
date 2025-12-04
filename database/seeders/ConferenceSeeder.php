@@ -8,9 +8,6 @@ use Illuminate\Database\Seeder;
 
 class ConferenceSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
         $admin = User::where('email', 'admin@example.com')->first();

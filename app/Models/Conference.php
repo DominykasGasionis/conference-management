@@ -22,9 +22,6 @@ class Conference extends Model
         'date' => 'date',
     ];
 
-    /**
-     * Get the user that created this conference
-     */
     public function user()
     {
         return $this->belongsTo(User::class);
