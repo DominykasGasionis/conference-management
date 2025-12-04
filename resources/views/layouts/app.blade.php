@@ -63,7 +63,6 @@
     </main>
 
     <footer class="container text-center text-muted py-4 mt-5">
-        <small>&copy; {{ date('Y') }} {{ __('general.app_name') }}</small>
     </footer>
 </body>
 </html>
